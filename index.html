@@ -7,7 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Lato', sans-serif; background-color: #FAFAFA; color: #1A1A1A; }
+        body { font-family: 'Lato', sans-serif; color: #1A1A1A; position: relative; background-color: #FAFAFA; }
+        .bg-wedding {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover; background-position: center; 
+            opacity: 0.08; filter: grayscale(100%);
+        }
         h1, h2, h3, .font-serif, .brand-logo { font-family: 'Playfair Display', serif; }
         .text-champagne { color: #C5A059; }
         .bg-champagne { background-color: #C5A059; }
@@ -15,18 +21,21 @@
         .bg-charcoal { background-color: #1A1A1A; }
         .text-charcoal { color: #1A1A1A; }
         .premium-shadow { box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08); }
-        .button-hover:hover { background-color: #1A1A1A; color: #fff; border-color: #1A1A1A; }
+        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
     </style>
 </head>
 <body class="antialiased selection:bg-[#C5A059] selection:text-white">
     
+  <!-- Faded Wedding Background -->
+  <div class="bg-wedding"></div>
+
   <!-- Top banner -->
-  <div class="bg-[#1A1A1A] text-[#C5A059] text-center py-3 font-serif italic text-sm tracking-widest">
+  <div class="bg-[#1A1A1A] text-[#C5A059] text-center py-3 font-serif italic text-sm tracking-widest relative z-10">
      Now securing dates for the 2026 / 2027 Cape Town wedding season.
   </div>
 
   <!-- Branding / Logo Header -->
-  <header class="w-full pt-10 pb-6 text-center">
+  <header class="w-full pt-10 pb-6 text-center relative z-10">
      <div class="text-2xl md:text-4xl brand-logo tracking-[0.2em] text-charcoal uppercase font-medium">
         Cape Premier Audio
      </div>
@@ -34,63 +43,52 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-10 pb-20 px-6 max-w-5xl mx-auto text-center">
+  <section class="relative pt-10 pb-16 px-6 max-w-5xl mx-auto text-center z-10">
      <h2 class="text-xs md:text-sm font-bold text-gray-500 mb-8 uppercase tracking-[0.3em]">The Exclusive Venue Partner</h2>
      
      <h1 class="text-5xl md:text-7xl font-serif text-charcoal mb-8 leading-[1.1] font-medium">
         Flawless Audio For <br/><span class="italic text-champagne">The Perfect Day.</span>
      </h1>
      
-     <p class="text-lg md:text-xl text-gray-600 font-light max-w-2xl mx-auto mb-14 leading-relaxed">
+     <p class="text-lg md:text-xl text-gray-700 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
         Don't let a budget DJ compromise the most important words you'll ever say. We provide premium, operated audio so your vows are crystal clear and your dancefloor is unforgettable.
      </p>
 
-     <!-- VSL Placeholder (Cinematic) -->
-     <div class="max-w-4xl mx-auto aspect-video bg-gray-200 mb-16 flex items-center justify-center relative overflow-hidden premium-shadow cursor-pointer group">
-        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition duration-1000 ease-in-out" alt="Wedding celebration">
-        <div class="absolute inset-0 bg-[#1A1A1A]/30 group-hover:bg-[#1A1A1A]/10 transition duration-500"></div>
-        
-        <!-- Play Button -->
-        <div class="bg-white/90 rounded-full p-6 relative z-10 transform group-hover:scale-110 transition duration-500 shadow-xl border border-gray-100">
-            <svg class="w-8 h-8 text-charcoal ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M8 5v10l7-5-7-5z"/></svg>
-        </div>
-     </div>
-
-     <a href="#onboarding" class="inline-block border border-charcoal bg-transparent text-charcoal hover:bg-charcoal hover:text-white text-sm font-bold uppercase tracking-[0.2em] py-4 px-12 transition duration-500">
+     <a href="#onboarding" class="inline-block border border-charcoal bg-white/80 backdrop-blur text-charcoal hover:bg-charcoal hover:text-white text-sm font-bold uppercase tracking-[0.2em] py-4 px-12 transition duration-500">
         Reserve Your Date
      </a>
   </section>
 
   <!-- The "Crazy" Guarantee (Editorial Style) -->
-  <section class="py-20 px-6 bg-white">
-     <div class="max-w-3xl mx-auto text-center">
+  <section class="py-16 px-6 relative z-10">
+     <div class="max-w-3xl mx-auto text-center glass-panel p-10 rounded-sm premium-shadow border border-white/50">
         <h2 class="text-3xl md:text-4xl font-serif mb-8 text-charcoal italic">The Flawless Promise</h2>
         <div class="w-12 h-px bg-champagne mx-auto mb-8"></div>
-        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light mb-8">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-light mb-8">
             “If your microphone squeals, drops out, or creates feedback during your ceremony vows or reception speeches... <span class="text-charcoal font-semibold">we will refund your entire ceremony audio cost.</span>”
         </p>
-        <p class="text-xs text-gray-400 font-bold uppercase tracking-[0.2em]">We own the gear. Our engineers operate it. Perfection is the standard.</p>
+        <p class="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">We own the gear. Our engineers operate it. Perfection is the standard.</p>
      </div>
   </section>
 
   <!-- The Packages (Boutique Menu Style) -->
-  <section id="packages" class="py-24 px-6 bg-[#FAFAFA] border-t border-gray-100">
+  <section id="packages" class="py-20 px-6 relative z-10">
      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-20">
+        <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-serif text-charcoal mb-4">Curated Audio Experiences</h2>
             <div class="w-12 h-px bg-champagne mx-auto mb-6"></div>
-            <p class="text-md text-gray-500 font-light">Premium packages designed exclusively for Cape Town's finest venues.</p>
+            <p class="text-md text-gray-600 font-light">Premium packages designed exclusively for Cape Town's finest venues.</p>
         </div>
         
         <div class="grid md:grid-cols-3 gap-10">
             
             <!-- Tier 1 -->
-            <div class="bg-white p-10 border border-gray-100 flex flex-col premium-shadow transition duration-500 hover:-translate-y-2">
+            <div class="glass-panel p-10 border border-white/60 flex flex-col premium-shadow transition duration-500 hover:-translate-y-2">
                 <h3 class="text-2xl font-serif mb-2 text-charcoal">The Essentials</h3>
-                <p class="text-gray-500 mb-8 text-sm font-light h-12">Perfect for couples with a live band who require flawless formalities.</p>
+                <p class="text-gray-600 mb-8 text-sm font-light h-12">Perfect for couples with a live band who require flawless formalities.</p>
                 <div class="text-3xl font-serif text-charcoal mb-8">R4,500</div>
-                <div class="w-full h-px bg-gray-100 mb-8"></div>
-                <ul class="space-y-4 flex-grow text-gray-600 text-sm font-light">
+                <div class="w-full h-px bg-gray-200 mb-8"></div>
+                <ul class="space-y-4 flex-grow text-gray-700 text-sm font-light">
                     <li><span class="text-champagne mr-2">✦</span> Premium PA System</li>
                     <li><span class="text-champagne mr-2">✦</span> 2x Professional Wireless Mics</li>
                     <li><span class="text-champagne mr-2">✦</span> On-Site Sound Engineer</li>
@@ -98,12 +96,12 @@
             </div>
 
             <!-- Tier 2 -->
-            <div class="bg-charcoal text-white p-10 flex flex-col premium-shadow relative transform md:scale-105 md:-translate-y-2 z-10">
+            <div class="bg-charcoal text-white p-10 flex flex-col premium-shadow relative transform md:scale-105 z-10 border border-gray-800">
                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-champagne text-white px-4 py-1 text-[10px] font-bold uppercase tracking-widest shadow-md">The Signature Choice</div>
                 <h3 class="text-2xl font-serif mb-2 mt-2">The Celebration</h3>
-                <p class="text-gray-400 mb-8 text-sm font-light h-12">The complete, seamless solution from guest arrival to the final dance.</p>
+                <p class="text-gray-300 mb-8 text-sm font-light h-12">The complete, seamless solution from guest arrival to the final dance.</p>
                 <div class="text-3xl font-serif text-champagne mb-8">R7,500</div>
-                <div class="w-full h-px bg-gray-800 mb-8"></div>
+                <div class="w-full h-px bg-gray-700 mb-8"></div>
                 <ul class="space-y-4 flex-grow text-gray-300 text-sm font-light">
                     <li><span class="text-champagne mr-2">✦</span> Full Premium PA System</li>
                     <li><span class="text-champagne mr-2">✦</span> 2x Professional Wireless Mics</li>
@@ -113,12 +111,12 @@
             </div>
 
             <!-- Tier 3 -->
-            <div class="bg-white p-10 border border-gray-100 flex flex-col premium-shadow transition duration-500 hover:-translate-y-2">
+            <div class="glass-panel p-10 border border-white/60 flex flex-col premium-shadow transition duration-500 hover:-translate-y-2">
                 <h3 class="text-2xl font-serif mb-2 text-charcoal">The Platinum</h3>
-                <p class="text-gray-500 mb-8 text-sm font-light h-12">For sprawling venue properties requiring multi-zone audio coverage.</p>
+                <p class="text-gray-600 mb-8 text-sm font-light h-12">For sprawling venue properties requiring multi-zone audio coverage.</p>
                 <div class="text-3xl font-serif text-charcoal mb-8">R10,500</div>
-                <div class="w-full h-px bg-gray-100 mb-8"></div>
-                <ul class="space-y-4 flex-grow text-gray-600 text-sm font-light">
+                <div class="w-full h-px bg-gray-200 mb-8"></div>
+                <ul class="space-y-4 flex-grow text-gray-700 text-sm font-light">
                     <li><span class="text-champagne mr-2">✦</span> Main + Satellite PA Systems</li>
                     <li><span class="text-champagne mr-2">✦</span> 3x Premium LED Wash Lights</li>
                     <li><span class="text-champagne mr-2">✦</span> Multi-Zone Audio Routing</li>
@@ -130,29 +128,29 @@
   </section>
 
   <!-- Checkout / Onboarding -->
-  <section id="onboarding" class="py-24 px-6 bg-white border-t border-gray-100">
+  <section id="onboarding" class="py-20 px-6 relative z-10">
      <div class="max-w-2xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-charcoal">Secure Your Date</h2>
-        <p class="text-md text-gray-500 text-center font-light mb-12">A 50% non-refundable deposit secures our team and equipment for your event.</p>
+        <p class="text-md text-gray-600 text-center font-light mb-12">A 50% non-refundable deposit secures our team and equipment for your event.</p>
 
-        <form class="bg-[#FAFAFA] p-10 md:p-14 border border-gray-100 premium-shadow">
+        <form class="glass-panel p-10 md:p-14 border border-white/60 premium-shadow">
            <div class="grid md:grid-cols-2 gap-8 mb-8">
               <div>
-                 <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-[0.1em]">Name</label>
-                 <input type="text" class="w-full bg-white border border-gray-200 p-3 text-charcoal focus:border-champagne focus:ring-0 focus:outline-none transition font-light" placeholder="Jane Doe">
+                 <label class="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-[0.1em]">Name</label>
+                 <input type="text" class="w-full bg-white/80 border border-gray-200 p-3 text-charcoal focus:border-champagne focus:ring-0 focus:outline-none transition font-light" placeholder="Jane Doe">
               </div>
               <div>
-                 <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-[0.1em]">Event Date</label>
-                 <input type="date" class="w-full bg-white border border-gray-200 p-3 text-gray-500 focus:border-champagne focus:ring-0 focus:outline-none transition font-light">
+                 <label class="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-[0.1em]">Event Date</label>
+                 <input type="date" class="w-full bg-white/80 border border-gray-200 p-3 text-gray-600 focus:border-champagne focus:ring-0 focus:outline-none transition font-light">
               </div>
            </div>
            <div class="mb-8">
-              <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-[0.1em]">Venue Name</label>
-              <input type="text" class="w-full bg-white border border-gray-200 p-3 text-charcoal focus:border-champagne focus:ring-0 focus:outline-none transition font-light" placeholder="Where is the celebration?">
+              <label class="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-[0.1em]">Venue Name</label>
+              <input type="text" class="w-full bg-white/80 border border-gray-200 p-3 text-charcoal focus:border-champagne focus:ring-0 focus:outline-none transition font-light" placeholder="Where is the celebration?">
            </div>
            <div class="mb-12">
-              <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-[0.1em]">Select Experience</label>
-              <select class="w-full bg-white border border-gray-200 p-3 text-charcoal focus:border-champagne focus:ring-0 focus:outline-none transition font-light appearance-none">
+              <label class="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-[0.1em]">Select Experience</label>
+              <select class="w-full bg-white/80 border border-gray-200 p-3 text-charcoal focus:border-champagne focus:ring-0 focus:outline-none transition font-light appearance-none">
                  <option>The Essentials (R4,500)</option>
                  <option selected>The Celebration (R7,500)</option>
                  <option>The Platinum (R10,500)</option>
@@ -164,8 +162,8 @@
            </button>
            
            <div class="mt-8 flex flex-col justify-center items-center">
-              <span class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Secure Checkout Partner</span>
-              <img src="https://checkout.payfast.co.za/assets/images/payfast_logo.svg" alt="PayFast" class="h-4 opacity-30 grayscale">
+              <span class="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Secure Checkout Partner</span>
+              <img src="https://checkout.payfast.co.za/assets/images/payfast_logo.svg" alt="PayFast" class="h-4 opacity-40 grayscale">
            </div>
         </form>
      </div>
